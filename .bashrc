@@ -12,6 +12,13 @@ then
 fi
 export PATH
 
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+
+source /usr/share/fzf/shell/key-bindings.bash
+source /usr/share/fzf/shell/completion.bash
+
 eval "$(zoxide init bash)"
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
