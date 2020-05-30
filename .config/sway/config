@@ -176,8 +176,6 @@ bar {
                }
 }
 
-for_window [app_id="Alacritty"] opacity set 0.90
-
 focus_follows_mouse no
 exec "MOZ_ENABLE_WAYLAND=1 firefox"
 exec "alacritty"
