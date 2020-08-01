@@ -26,3 +26,6 @@ eval "$(zoxide init bash)"
 
 # User specific aliases and functions
 alias vim=nvim
+alias cat=bat
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

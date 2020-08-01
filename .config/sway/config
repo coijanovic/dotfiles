@@ -190,14 +190,13 @@ for_window [app_id="ranger"] floating enable
 bindsym $mod+n exec alacritty --class ranger -e 'ranger'
 
 
-input 1452:613:Apple_Inc._Magic_Trackpad_2 {
+input 1739:0:Synaptics_tm2962-001 {
     tap enabled
     natural_scroll enabled
     pointer_accel 0.5
 }
 
-output DP-1 {
-    transform 270
+output eDP-1 {
     background ~/.config/desktop/wallpaper.jpg fill #000000
 }
 
