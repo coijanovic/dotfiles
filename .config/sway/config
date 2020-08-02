@@ -22,7 +22,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-set $menu wofi -S drun
+set $menu QT_QPA_PLATFORM=wayland MOZ_ENABLE_WAYLAND=1 bemenu-run --hb=bf616a
 bindsym $mod+d exec $menu
 
 # change focus
@@ -179,7 +179,7 @@ bar {
 focus_follows_mouse no
 exec "MOZ_ENABLE_WAYLAND=1 firefox"
 exec "alacritty"
-exec nextcloud
+exec "nextcloud -platform wayland"
 exec "unclutter &"
 
 assign [app_id="firefox"] $workspace2
