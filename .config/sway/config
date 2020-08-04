@@ -1,8 +1,5 @@
 # sway config file
 
-# for a pure wayland experience
-xwayland disable
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -81,7 +78,7 @@ set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"
 set $workspace6 "6"
-set $workspace7 "α"
+set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
 set $workspace10 "10"
@@ -106,7 +103,7 @@ bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container o workspace $workspace8
+bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
@@ -115,6 +112,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
+
+# lock the screen
+bindsym $mod+Shift+p exec "swaylock -i /home/christoph/.config/desktop/wallpaper.jpg -s fill"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -196,7 +196,18 @@ input 1739:0:Synaptics_tm2962-001 {
     pointer_accel 0.5
 }
 
+input 1452:613:Apple_Inc._Magic_Trackpad_2 {
+    tap enabled
+    natural_scroll enabled
+    pointer_accel 0.5
+}
+
 output eDP-1 {
+    background ~/.config/desktop/wallpaper.jpg fill #000000
+}
+
+output HDMI-A-2 {
+    transform 270
     background ~/.config/desktop/wallpaper.jpg fill #000000
 }
 
