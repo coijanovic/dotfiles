@@ -10,6 +10,10 @@ set shiftwidth=4             " Indents will have a width of 4
 set softtabstop=4            " Sets the number of columns for a TAB
 set expandtab                " Expand TABs to spaces
 
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+set undodir=~/.vim/undo
+
 nmap <Space> <Plug>yankstack_substitute_older_paste
 nmap <S-Space> <Plug>yankstack_substitute_newer_paste
 nnoremap <Leader>f :FZF<CR>

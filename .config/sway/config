@@ -193,6 +193,7 @@ exec "MOZ_ENABLE_WAYLAND=1 firefox"
 exec "alacritty"
 exec "nextcloud -platform wayland"
 exec "unclutter &"
+exec "maco"
 
 assign [app_id="firefox"] $workspace2
 
