@@ -24,6 +24,8 @@ nnoremap <Leader>g :Rg<CR>
 nnoremap <Leader>n :noh<CR> 
 nnoremap <Leader>t :TableModeToggle<CR> 
 
+nnoremap <Leader>c :silent ! make<CR>
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'arcticicestudio/nord-vim'
