@@ -24,7 +24,7 @@ nnoremap <Leader>g :Rg<CR>
 nnoremap <Leader>n :noh<CR> 
 nnoremap <Leader>t :TableModeToggle<CR> 
 
-nnoremap <Leader>c :silent ! make<CR>
+nnoremap <Leader>c :w<CR> :silent ! make<CR>
 
 call plug#begin('~/.vim/plugged')
 
