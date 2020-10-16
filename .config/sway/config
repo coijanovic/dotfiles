@@ -115,10 +115,10 @@ workspace $workspace2 output DP-4 eDP-1
 workspace $workspace3 output DP-4 eDP-1
 workspace $workspace4 output DP-4 eDP-1
 workspace $workspace5 output DP-4 eDP-1
-workspace $workspace6 output DP-5 HDMI-A-1
-workspace $workspace7 output DP-5 HDMI-A-1
-workspace $workspace8 output DP-5 HDMI-A-1
-workspace $workspace9 output DP-5 HDMI-A-1
+workspace $workspace6 output DP-5 DP-3 HDMI-A-1
+workspace $workspace7 output DP-5 DP-3 HDMI-A-1
+workspace $workspace8 output DP-5 DP-3 HDMI-A-1
+workspace $workspace9 output DP-5 DP-3 HDMI-A-1
 workspace $workspace10 output eDP-1 
 
 bindswitch --reload --locked lid:on output eDP-1 disable
@@ -167,11 +167,11 @@ set $urgent-bg-color     #bf616a
 set $active-border       #4c566a
 
 # window colors
-#                       border              background         text                 indicator child-border
-client.focused          $bg-color           $bg-color          $text-color          #00ff00    $active-border
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00     $bg-color
+#                       border             background        text                 indicator child-border
+client.focused          $bg-color          $bg-color          $text-color          #00ff00  $active-border
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00  $bg-color
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent $urgent-bg-color $urgent-bg-color $text-color #00ff00
+client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          #00ff00
 
 default_border pixel 2
 hide_edge_borders smart
@@ -213,19 +213,23 @@ input 1452:613:Apple_Inc._Magic_Trackpad_2 {
     pointer_accel 0.5
 }
 
+output * {
+    background ~/.config/desktop/wallpaper.jpg fill #000000
+}
 output eDP-1 {
     position 3000 1050
-    background ~/.config/desktop/wallpaper.jpg fill #000000
+}
+
+output DP-3 {
+    mode 3840x2160@29.981001Hz
 }
 
 output DP-4 {
     position 1080 220
-    background ~/.config/desktop/wallpaper.jpg fill #000000
 }
 
 output DP-5 {
     position 0 0
     transform 270
-    background ~/.config/desktop/wallpaper.jpg fill #000000
 }
 
