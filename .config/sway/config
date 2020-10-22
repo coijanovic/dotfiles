@@ -115,10 +115,10 @@ workspace $workspace2 output DP-4 eDP-1
 workspace $workspace3 output DP-4 eDP-1
 workspace $workspace4 output DP-4 eDP-1
 workspace $workspace5 output DP-4 eDP-1
-workspace $workspace6 output DP-5 DP-3 HDMI-A-1
-workspace $workspace7 output DP-5 DP-3 HDMI-A-1
-workspace $workspace8 output DP-5 DP-3 HDMI-A-1
-workspace $workspace9 output DP-5 DP-3 HDMI-A-1
+workspace $workspace6 output DP-3 DP-4 HDMI-A-1 eDP-1
+workspace $workspace7 output DP-3 DP-4 HDMI-A-1 eDP-1
+workspace $workspace8 output DP-3 DP-4 HDMI-A-1 eDP-1
+workspace $workspace9 output DP-3 DP-4 HDMI-A-1 eDP-1
 workspace $workspace10 output eDP-1 
 
 bindswitch --reload --locked lid:on output eDP-1 disable
@@ -215,21 +215,5 @@ input 1452:613:Apple_Inc._Magic_Trackpad_2 {
 
 output * {
     background ~/.config/desktop/wallpaper.jpg fill #000000
-}
-output eDP-1 {
-    position 3000 1050
-}
-
-output DP-3 {
-    mode 3840x2160@29.981001Hz
-}
-
-output DP-4 {
-    position 1080 220
-}
-
-output DP-5 {
-    position 0 0
-    transform 270
 }
 
