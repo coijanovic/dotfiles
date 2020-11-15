@@ -115,10 +115,10 @@ workspace $workspace2 output DP-4 eDP-1
 workspace $workspace3 output DP-4 eDP-1
 workspace $workspace4 output DP-4 eDP-1
 workspace $workspace5 output DP-4 eDP-1
-workspace $workspace6 output DP-3 DP-4 HDMI-A-1 eDP-1
-workspace $workspace7 output DP-3 DP-4 HDMI-A-1 eDP-1
-workspace $workspace8 output DP-3 DP-4 HDMI-A-1 eDP-1
-workspace $workspace9 output DP-3 DP-4 HDMI-A-1 eDP-1
+workspace $workspace6 output DP-5 DP-4 HDMI-A-1 eDP-1
+workspace $workspace7 output DP-5 DP-4 HDMI-A-1 eDP-1
+workspace $workspace8 output DP-5 DP-4 HDMI-A-1 eDP-1
+workspace $workspace9 output DP-5 DP-4 HDMI-A-1 eDP-1
 workspace $workspace10 output eDP-1 
 
 bindswitch --reload --locked lid:on output eDP-1 disable
@@ -195,8 +195,19 @@ bar {
 
 focus_follows_mouse no
 exec "alacritty"
-exec "maco"
+exec "bwarn"
+exec "mako"
 
+# Keyboard shortcuts
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 input 2:7:SynPS/2_Synaptics_TouchPad {
     tap enabled
@@ -213,7 +224,18 @@ input 1452:613:Apple_Inc._Magic_Trackpad_2 {
     pointer_accel 0.5
 }
 
+# 4K Dell @ Home
+set $d4k 'Dell Inc. DELL U2718Q FN84K83Q1LPL' 
+
 output * {
     background ~/.config/desktop/wallpaper.jpg fill #000000
+}
+output eDP-1 {
+    mode 1920x1080@60.007999Hz
+    position 0 0
+}
+output $d4k {
+    mode 3840x2160@29.981001Hz 
+    position -3840 -1080
 }
 
